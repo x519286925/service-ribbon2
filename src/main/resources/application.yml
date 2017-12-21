@@ -1,0 +1,35 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8860/eureka/
+server:
+  port: 8080
+spring:
+  application:
+    name: service-feign
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/meetingsign?useUnicode=true&characterEncoding=utf8
+      username: ***********
+      password: ***********
+  jpa:
+      hibernate:
+        ddl-auto: update
+        show-sql: true
+  data:
+      mongodb:
+        uri: mongodb://localhost:27017/test
+  http:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 1Mb
+newsUrl:
+   url: http://nannima.top:8080
+   contextPath: /demo
+   wxPhone: http://xinlovezhang.top:8080
+wechat:
+   mpAppId: ***********
+   mpAppSecret: ***********
+#  httpclient:
+#    enabled: true
+#Feign是自带断路器的，在D版本的Spring Cloud中，它没有默认打开。需要在配置文件中配置打开它，在配置文件加以下代码：
